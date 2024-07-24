@@ -3,27 +3,25 @@ import mongoose from 'mongoose';
 import logger from './middleware/logger.js';
 import notFound from './middleware/notFound.js';
 import errorHandler from './middleware/error.js';
-import products from './routes/products.route.js';
+import products from './routes/products.js';
 const port = process.env.PORT || 3000;
 
 const app = express();
 
-//  Body parser middleware
+//  Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-// Logger middleware
 app.use(logger);
+
+// Routes
+app.use('/api/products', products);
 
 // Basic response to verify server is working
 app.get('/', (req, res) => {
 	res.send('Hello from Node API');
 });
 
-// Routes
-app.use('/api/products', products);
-
-// Error handler
+// Error handlers
 app.use(notFound);
 app.use(errorHandler);
 
