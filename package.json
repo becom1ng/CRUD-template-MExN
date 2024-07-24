@@ -1,0 +1,20 @@
+{
+	"name": "crud-template-mexn",
+	"version": "1.0.0",
+	"description": "Basic template for a CRUD API using Node, Express, and MongoDB.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve": "node index.js",
+		"dev": "node --watch index.js"
+	},
+	"keywords": [],
+	"author": "Ryan Lavery",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.19.2",
+		"mongodb": "^6.8.0",
+		"mongoose": "^8.5.1"
+	}
+}
